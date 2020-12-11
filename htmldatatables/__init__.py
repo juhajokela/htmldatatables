@@ -29,7 +29,7 @@ def generate_html_table(data):
     obj = next(iter(data))
     assert isinstance(obj, dict), 'data object is not dictionary'
 
-    table = '<table id="table" class="display">'
+    table = '<table id="table">'
     table += generate_header_row(obj)
     table += '<tbody>'
     for obj in data:
