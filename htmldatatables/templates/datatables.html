@@ -17,12 +17,24 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
     <script type="text/javascript">
+
+        const lengthMenu = [10,20,25,50,100];
+
         $(document).ready( function () {
             $('#table').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
+                    'pageLength',
+                    'copy',
+                    'csv',
+                    'excel',
+                    'pdf',
+                    'print',
+                ],
+                lengthMenu: [
+                    lengthMenu.concat([-1]),
+                    lengthMenu.map(n => `${n} rows`).concat(['Show all'])
+                ],
             });
         } );
     </script>
